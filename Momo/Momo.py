@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# momo.py
+# Momo.py
 #
 # The start of scrappy, perhaps crappy monitoring system.
 #
@@ -7,7 +7,7 @@ import os
 import sys
 import socket
 
-class MomoParentScheduler(object):
+class ParentScheduler(object):
 	"""
 	Who, What, Where, When, How.
 
@@ -20,7 +20,7 @@ class MomoParentScheduler(object):
 	least full algorithm.
 	"""
 
-class MomoChildScheduler(object):
+class ChildScheduler(object):
 	"""
 	The child scheduler is responsible for managing a local FIFO
 	queue of services that need to be checked.
@@ -29,7 +29,7 @@ class MomoChildScheduler(object):
 	that need to be executed.
 	"""
 
-class MomoServiceBase(object):
+class ServiceBase(object):
 	"""
 	What
 	"""
@@ -42,7 +42,7 @@ class MomoServiceBase(object):
 		if type != None:
 			self.type = type
 
-class MomoActionBase(object):
+class ActionBase(object):
 	"""
 	How
 	"""
@@ -64,10 +64,3 @@ class MomoActionBase(object):
 		s.close()
 
 
-def main():
-	Service = MomoServiceBase(hostname="localhost", port=999, type="tcp")
-	Action = MomoActionBase(Service)
-	Action.poll()
-
-if __name__ == '__main__':
-	main()
